@@ -3,11 +3,8 @@ package com.example.calculator_project1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.view.*;
+import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
 
