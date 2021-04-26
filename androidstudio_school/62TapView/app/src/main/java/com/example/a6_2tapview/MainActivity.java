@@ -20,12 +20,13 @@ public class MainActivity extends TabActivity {
         tabSpecSong.setContent(R.id.tabSong);
         tabHost.addTab(tabSpecSong);
 
-        TabHost.TabSpec tabSpecArtist = tabHost.newTabSpec("ARTIST").setIndicator("가수별");
-        tabSpecSong.setContent(R.id.tabArtist);
+        TabHost.TabSpec tabSpecArtist = tabHost.newTabSpec("ARTIST")
+                .setIndicator("가수별");
+        tabSpecArtist.setContent(R.id.tabArtist);
         tabHost.addTab(tabSpecArtist);
 
         TabHost.TabSpec tabSpecAlbum = tabHost.newTabSpec("ALBUM").setIndicator("앨범별");
-        tabSpecSong.setContent(R.id.tabAlbum);
+        tabSpecAlbum.setContent(R.id.tabAlbum);
         tabHost.addTab(tabSpecAlbum);
 
         tabHost.setCurrentTab(0);
