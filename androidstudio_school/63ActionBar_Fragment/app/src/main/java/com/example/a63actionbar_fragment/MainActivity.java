@@ -1,6 +1,8 @@
+package com.example.a63actionbar_fragment;
+
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,10 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-@SuppressWarnings("deprecation")
-public class MainActivity extends Activity implements ActionBar.TabListener {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-    MyTabFragment myFrags[] = new MyTabFragment[3];
+import com.example.a63actionbar_fragment.R;
+
+@SuppressWarnings("deprecation")
+public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
+
     Tab tabSong, tabArtist, tabAlbum;
 
     @Override
@@ -46,6 +52,8 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
     public void onTabReselected(Tab tab, FragmentTransaction ft) {
     }
 
+    MyTabFragment myFrags[] = new MyTabFragment[3];
+
     @Override
     public void onTabSelected(Tab tab, FragmentTransaction ft) {
 
@@ -62,7 +70,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         } else
             myTabFrag = myFrags[tab.getPosition()];
 
-        ft.replace(android.R.id.content, myTabFrag);
+        ft.replace(android.R.id.content,myTabFrag);
     }
 
     @Override
@@ -102,25 +110,4 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
